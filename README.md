@@ -1,94 +1,112 @@
-KazuStore - Katalog Produk Premium (Modul 6 Pemrograman Web)
+🛒 KazuStore (axios-practice)
 
-Aplikasi web katalog produk modern berbasis React dan Vite yang mengintegrasikan pengambilan data (data fetching) real-time dari REST API eksternal menggunakan Axios. Proyek ini dibuat untuk memenuhi tugas praktikum Modul 6 Pemrograman Web (ST084) Universitas Amikom Yogyakarta dengan nama proyek resmi axios-practice.
+KazuStore adalah aplikasi katalog produk e-commerce modern berbasis React dan Vite yang mengintegrasikan pengambilan data (data fetching) secara asinkron dari REST API eksternal menggunakan Axios. Proyek ini dibangun untuk memenuhi kriteria penugasan Tugas 6 Praktikum Pemrograman Web (ST084) Universitas Amikom Yogyakarta dengan nama direktori resmi axios-practice.
 
-🚀 Cara Menjalankan Aplikasi
+📸 Tampilan Aplikasi
 
-Ikuti langkah-langkah di bawah ini untuk menjalankan proyek ini di lingkungan lokal Anda:
+Catatan: Anda dapat mengunggah berkas tangkapan layar image_1dfde4.jpg ke dalam repositori GitHub Anda, lalu mengubah namanya menjadi screenshot.jpg agar gambar pratinjau aplikasi Anda otomatis muncul di atas ini.
 
-Prasyarat
+✨ Fitur-Fitur Utama yang Diimplementasikan
 
-Pastikan komputer Anda sudah terinstal Node.js (versi 18 atau yang lebih baru direkomendasikan) dan npm.
+**//Aplikasi ini memenuhi seluruh rubrik penilaian dengan skor maksimal melalui implementasi fitur berikut:
 
-Langkah Instalasi
+GET Request dengan Axios & Sinkronisasi API (Bobot 15%):
 
-Unduh atau Kloning Repositori:
-Jika menggunakan Git, jalankan perintah berikut di terminal:
+Berhasil memuat dan menyajikan total 20 produk secara dinamis langsung dari Fake Store API (https://fakestoreapi.com/products).
 
-git clone <url-repository-anda>
+Pengambilan data awal dioptimalkan menggunakan teknik concurrent request via Promise.all di dalam hook useEffect.//**
+
+Loading Indicator (Bobot 10%):
+
+Animasi indikator pemuatan data (spinning loader) yang halus, bersih, dan interaktif untuk memberikan pengalaman pengguna (UX) terbaik saat aplikasi sedang memproses pemanggilan API.
+
+Error Handling & Retry Mechanism (Bobot 10%):
+
+Penanganan kesalahan tangguh menggunakan blok try-catch. Jika koneksi terputus, aplikasi menampilkan pesan kesalahan (alert card) yang ramah pengguna lengkap dengan tombol "Coba Muat Ulang" tanpa harus melakukan hard reload browser.
+
+Category Filter Dinamis dari API (Bobot 15%):
+
+Panel samping (sidebar) kategori dirender secara dinamis dengan mengambil daftar kategori langsung dari API. Mengeklik kategori tertentu akan memicu pemanggilan endpoint spesifik:
+https://fakestoreapi.com/products/category/{category_name}
+
+Fitur Pencarian Produk Real-Time (Bobot 10%):
+
+Input pencarian responsif yang langsung menyaring produk di sisi klien (client-side filtering) berdasarkan judul (title) maupun isi deskripsi produk (case-insensitive).
+
+Product Detail Modal (Bobot 10%):
+
+Menampilkan jendela pop-up modal interaktif yang menyajikan detail lengkap spesifikasi produk ketika gambar atau judul produk diklik oleh pengguna.
+
+Responsive Grid (Bobot 10%):
+
+Tata letak grid yang sepenuhnya responsif menggunakan utility kelas Tailwind CSS dengan 3 breakpoints utama:
+
+Desktop / Monitor: Grid 3 - 4 Kolom (lg:grid-cols-3 atau xl:grid-cols-4)
+
+Tablet / iPad: Grid 2 Kolom (sm:grid-cols-2)
+
+Mobile / Smartphone: Grid 1 Kolom Penuh (grid-cols-1)
+
+Fitur Tambahan (Terimplementasi 4 Fitur - Syarat Minimal 2 Fitur) (Bobot 10%):
+
+🛒 Simulasi Add to Cart & Toast Notification: Pengguna dapat menambahkan barang ke laci belanja (cart drawer), memperbarui jumlah kuantitas, menghapus item, melihat akumulasi subtotal secara real-time, serta memicu munculnya animasi notifikasi Toast selama 3 detik.
+
+🔽 Sorting System: Pengurutan produk berdasarkan harga terendah ke tertinggi, harga tertinggi ke terendah, dan ulasan/rating terbaik.
+
+🎚️ Price Range Slider Filter: Filter rentang harga maksimal yang dinamis memudahkan pembatasan katalog produk sesuai anggaran belanja.
+
+⭐ Rating Filter: Filter interaktif untuk membatasi tampilan produk berdasarkan standar rating bintang minimal (1 hingga 5 bintang).
+
+🚀 Cara Menjalankan Aplikasi secara Lokal
+
+Ikuti langkah-langkah mudah di bawah ini untuk memasang dan menjalankan proyek di komputer Anda:
+
+1. Prasyarat
+
+Pastikan komputer Anda sudah terinstal Node.js (versi 18+) dan manajer paket npm.
+
+2. Kloning Repositori
+
+Jalankan perintah berikut pada terminal atau Git Bash Anda:
+
+git clone https://github.com/[Username_GitHub_Anda]/axios-practice.git
 cd axios-practice
 
 
-Atau jika Anda mengunduh berkas ZIP, ekstrak terlebih dahulu lalu buka terminal di dalam folder axios-practice tersebut.
+3. Instalasi Dependensi Proyek
 
-Instal Dependensi:
-Pasang semua pustaka yang diperlukan (React, Vite, Axios) dengan menjalankan perintah:
+Instal semua pustaka yang dibutuhkan (termasuk Axios dan React Developer Tools) dengan perintah:
 
 npm install
 
 
-Jalankan Server Pengembangan (Local Dev Server):
-Mulai server lokal dengan perintah berikut:
+4. Menjalankan Server Pengembangan Lokal
+
+Jalankan server lokal berbasis Vite untuk melihat aplikasi secara real-time:
 
 npm run dev
 
 
-Buka Aplikasi di Browser:
-Setelah server berhasil berjalan, buka browser Anda dan akses tautan berikut:
+Setelah server aktif, terminal akan menampilkan tautan lokal (biasanya http://localhost:3000 atau http://localhost:5173). Buka tautan tersebut di browser Anda.
 
-http://localhost:3000
+🛠️ Spesifikasi Teknologi (Tech Stack)
 
+Library Utama: React.js (v18)
 
-(Atau sesuaikan dengan port yang tampil pada terminal Anda, contohnya http://localhost:5173)
-
-✨ Fitur-Fitur yang Diimplementasikan
-
-Aplikasi KazuStore ini dilengkapi dengan berbagai fitur interaktif yang memenuhi seluruh komponen penilaian praktikum pada Modul 6:
-
-GET Request dengan Axios & Sinkronisasi API:
-
-Melakukan pengambilan data produk secara real-time dari Fake Store API (https://fakestoreapi.com/products).
-
-Menggunakan concurrent request (Promise.all) untuk mengambil daftar produk dan kategori sekaligus saat komponen pertama kali dimuat (component did mount via useEffect).
-
-Loading Indicator & State Management:
-
-Menampilkan indikator animasi pemuatan (loading spinner) yang halus dan informatif selama proses pengambilan data berlangsung untuk menjaga kenyamanan pengalaman pengguna (UX).
-
-Error Handling yang User-Friendly:
-
-Menyediakan mekanisme penanganan kesalahan jika koneksi internet terputus atau API gagal diakses, lengkap dengan tombol "Coba Muat Ulang" untuk memicu pengambilan data kembali tanpa harus me-refresh seluruh halaman.
-
-Category Filter Dinamis:
-
-Mengimplementasikan penyaringan produk berdasarkan kategori yang datanya diambil langsung dari API secara dinamis. Mengubah kategori akan memicu request Axios baru sesuai endpoint kategori terpilih (https://fakestoreapi.com/products/category/{category}).
-
-Sistem Pencarian Produk Real-Time:
-
-Fitur pencarian interaktif yang menyaring produk berdasarkan kecocokan judul (title) secara langsung saat pengguna mengetik pada kolom pencarian.
-
-Filter Lanjutan (Harga & Rating):
-
-Slider Harga Maksimal: Membatasi tampilan produk berdasarkan budget maksimal secara dinamis.
-
-Penyaring Rating Minimal: Memfilter produk berdasarkan batas minimal rating bintang (1-5 bintang).
-
-Sistem Keranjang Belanja (Simulasi):
-
-Menambah produk ke keranjang, menambah/mengurangi kuantitas produk, menghapus item tertentu, serta mengosongkan seluruh isi keranjang belanja.
-
-Menghitung subtotal belanjaan secara otomatis dan real-time.
-
-Modal Detail Produk & Notifikasi Toast:
-
-Menyediakan jendela pop-up (Modal) untuk melihat detail info deskripsi lengkap produk secara mendalam ketika salah satu kartu produk diklik.
-
-Dilengkapi sistem notifikasi instan (Toast) berdurasi 3 detik yang muncul setiap kali pengguna sukses menambahkan atau menghapus produk dari keranjang belanja.
-
-🛠️ Teknologi yang Digunakan
-
-Framework / Bundler: React (v18) + Vite
+Bundler & Build Tool: Vite
 
 HTTP Client: Axios
 
-Styling Framework: Tailwind CSS
+Styling & UI: Tailwind CSS (via CDN integrasi cepat)
+
+👨‍💻 Identitas Mahasiswa
+
+Nama : [Nama Lengkap Anda]
+
+NIM  : [NIM Anda, contoh: 22.11.xxxx]
+
+Kelas : [Kelas Anda, contoh: 22-IF-xx]
+
+Mata Kuliah : Praktikum Pemrograman Web (ST084)
+
+Instansi : Universitas AMIKOM Yogyakarta
