@@ -4,7 +4,8 @@ KazuStore adalah aplikasi katalog produk e-commerce modern berbasis React dan Vi
 
 # 📸 Tampilan Aplikasi
 
-Catatan: Anda dapat mengunggah berkas tangkapan layar image_1dfde4.jpg ke dalam repositori GitHub Anda, lalu mengubah namanya menjadi screenshot.jpg agar gambar pratinjau aplikasi Anda otomatis muncul di atas ini.
+<img width="975" height="493" alt="image" src="https://github.com/user-attachments/assets/b7d5c38a-1079-4e2a-ac41-d313a24f5f14" />
+
 
 # ✨ Fitur-Fitur Utama yang Diimplementasikan
 
@@ -60,12 +61,12 @@ Mobile / Smartphone: Grid 1 Kolom Penuh (grid-cols-1)
 
 # 👨‍💻 Identitas Mahasiswa
 
-Nama : [Nama Lengkap Anda]
+Nama : RAFAEL REGA PURNOMO AJI
 
-NIM  : [NIM Anda, contoh: 22.11.xxxx]
+NIM  : 24.11.6103
 
-Kelas : [Kelas Anda, contoh: 22-IF-xx]
+Kelas : IF 03
 
-Mata Kuliah : Praktikum Pemrograman Web (ST084)
+Mata Kuliah : Pemrograman Web
 
 Instansi : Universitas AMIKOM Yogyakarta
